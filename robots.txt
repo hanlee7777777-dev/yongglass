@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yongglass.com/sitemap.xml
+Sitemap: https://yongglass.vercel.app/sitemap.xml
