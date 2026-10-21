@@ -37,6 +37,15 @@ header.site{background:#fff;position:sticky;top:0;z-index:40;transition:transfor
 header.site.hide{transform:translateY(calc(-1 * var(--logoH,82px)))}
 .logo{display:flex;align-items:center;justify-content:flex-start;gap:10px;padding:16px 20px 14px;background:#f6f2ea}
 .logo svg{width:52px;height:52px;flex:none}
+.logo{position:relative;overflow:hidden}
+.logo-run{position:absolute;top:50%;left:0;width:100%;height:25px;margin-top:-11px;pointer-events:none;z-index:2}
+.logo-run svg{position:absolute;left:30px;top:0;width:32.5px;height:25px;opacity:0;animation:carRun 7s linear infinite;filter:drop-shadow(0 2px 2px rgba(0,0,0,.25))}
+@keyframes carRun{0%,15%{left:30px;opacity:0}15.5%{left:30px;opacity:1}74%{left:calc(100% + 40px);opacity:1}74.5%,100%{left:calc(100% + 40px);opacity:0}}
+.logo-car{animation:logoCar 7s linear infinite}
+@keyframes logoCar{0%,15%{opacity:1}15.5%,82%{opacity:0}90%,100%{opacity:1}}
+.logo-yong{opacity:0;transform-box:fill-box;transform-origin:center;animation:logoYong 7s ease-out infinite;font-family:inherit}
+@keyframes logoYong{0%,20%{opacity:0;transform:scale(.5)}28%,76%{opacity:1;transform:scale(1)}82%,100%{opacity:0;transform:scale(.5)}}
+@media (prefers-reduced-motion:reduce){.logo-run{display:none}.logo-car,.logo-yong{animation:none}}
 .logo-txt{display:flex;flex-direction:column;line-height:1.15}
 .logo-txt b{font-size:24px;font-weight:900;color:var(--navy);letter-spacing:-.5px}
 .logo-txt span{font-size:12.5px;font-weight:700;color:#333;letter-spacing:.3px}
@@ -170,7 +179,7 @@ footer.site .fnav a{color:#c9d3de}
 </head>
 <body>
 <header class="site">
-  <a href="/" class="logo" aria-label="용글라스 홈"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="#0e5a4a" stroke-width="2.5"/><circle cx="32" cy="32" r="25" fill="none" stroke="#0e5a4a" stroke-width="1" stroke-dasharray="2 3"/><path d="M14 40c1-6 4-12 8-14h20c4 2 7 8 8 14v5H14z" fill="#0e5a4a"/><path d="M22 27l3-7h14l3 7z" fill="#f2c47a"/><path d="M31 21l2 3-3 1 2 2" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="21" cy="44" r="4" fill="#fff" stroke="#0e5a4a" stroke-width="2"/><circle cx="43" cy="44" r="4" fill="#fff" stroke="#0e5a4a" stroke-width="2"/></svg><span class="logo-txt"><b>용글라스</b><span>무료출장 자동차유리복원</span></span></a>
+  <a href="/" class="logo" aria-label="용글라스 홈"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="#0e5a4a" stroke-width="2.5"/><circle cx="32" cy="32" r="25" fill="none" stroke="#0e5a4a" stroke-width="1" stroke-dasharray="2 3"/><g class="logo-car"><path d="M14 40c1-6 4-12 8-14h20c4 2 7 8 8 14v5H14z" fill="#0e5a4a"/><path d="M22 27l3-7h14l3 7z" fill="#f2c47a"/><path d="M31 21l2 3-3 1 2 2" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="21" cy="44" r="4" fill="#fff" stroke="#0e5a4a" stroke-width="2"/><circle cx="43" cy="44" r="4" fill="#fff" stroke="#0e5a4a" stroke-width="2"/></g><text class="logo-yong" x="32" y="33" text-anchor="middle" dominant-baseline="central" font-size="30" font-weight="900" fill="#0e5a4a">용</text></svg><span class="logo-txt"><b>용글라스</b><span>무료출장 자동차유리복원</span></span><span class="logo-run" aria-hidden="true"><svg viewBox="12 18 40 31"><path d="M14 40c1-6 4-12 8-14h20c4 2 7 8 8 14v5H14z" fill="#0e5a4a"/><path d="M22 27l3-7h14l3 7z" fill="#f2c47a"/><path d="M31 21l2 3-3 1 2 2" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="21" cy="44" r="4" fill="#fff" stroke="#0e5a4a" stroke-width="2"/><circle cx="43" cy="44" r="4" fill="#fff" stroke="#0e5a4a" stroke-width="2"/></svg></span></a>
   <nav class="main"><a href="/">홈</a><a href="/windshieldrepair" class="active">유리복원</a><a href="/windshield-chip-repair">돌빵복원</a><a href="/glass-crack-welding">유리용접</a><a href="/repair-price">가격안내</a></nav>
 </header>
 <section class="hero"><div class="wrap">
