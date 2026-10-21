@@ -143,6 +143,7 @@ footer.site .fnav a{color:#c9d3de}
 .inq-sms{background:#2f6be0;color:#fff;border:1.5px solid #1f55bd;box-shadow:0 4px 10px rgba(47,107,224,.35)}
 .inq-kakao{background:#f9df4f;color:#3c2e0a;border:1.5px solid #d4b23a;box-shadow:0 4px 10px rgba(249,223,79,.45)}
 .inq-share{background:#46a24a;color:#fff;border:1.5px solid #378a3b;box-shadow:0 4px 10px rgba(70,162,74,.35)}
+.inq-tel{display:flex;align-items:center;justify-content:center;text-decoration:none;background:var(--navy);color:#fff;border:1.5px solid var(--navy-d);box-shadow:0 4px 10px rgba(14,90,74,.35)}
 .inq-note{color:#75808f;font-size:15px;font-weight:600;margin-top:20px;line-height:1.65}
 .inq-ov{display:none;position:fixed;inset:0;z-index:20000;background:rgba(10,20,35,.55);align-items:center;justify-content:center;padding:20px}
 .inq-pop{background:#fff;border-radius:22px;max-width:400px;width:100%;padding:26px 22px 22px;box-shadow:0 20px 50px rgba(0,0,0,.3);text-align:center}
@@ -253,7 +254,10 @@ footer.site .fnav a{color:#c9d3de}
         <button type="button" class="inq-btn inq-sms" onclick="inqTry('sms')">문자로 보내기</button>
         <button type="button" class="inq-btn inq-kakao" onclick="inqTry('kakao')">카톡으로 보내기</button>
       </div>
-      <button type="button" class="inq-btn inq-share" onclick="inqTry('share')">공유하기</button>
+      <div class="inq-row" style="margin-top:10px">
+        <button type="button" class="inq-btn inq-share" onclick="inqTry('share')">공유하기</button>
+        <a class="inq-btn inq-tel" href="tel:01022658840">전화하기</a>
+      </div>
       <p class="inq-note">문자 또는 카카오톡 창이 열리면 문의 내용을 붙여넣기 해주세요. (내용이 자동으로 복사됩니다) 손상 부위 사진도 함께 보내주세요.</p>
     </div>
   </div>
