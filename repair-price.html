@@ -39,12 +39,13 @@ nav.main::-webkit-scrollbar{display:none}
 nav.main a{flex:none;font-size:15px;font-weight:700;color:#4b5563;padding:7px 9px;border-radius:999px}
 nav.main a.active{background:var(--navy);color:#fff}
 .region{background:radial-gradient(ellipse at 15% 20%,rgba(255,255,255,.75),transparent 55%),radial-gradient(ellipse at 85% 75%,rgba(255,255,255,.6),transparent 50%),radial-gradient(ellipse at 60% 10%,rgba(0,0,0,.035),transparent 45%),var(--paper);padding:38px 0 44px;border-bottom:1px solid #e2dac8}
-.region h1,.region .region-title{text-align:center;font-size:17px;font-weight:800;color:var(--navy);margin-bottom:18px;letter-spacing:-.2px}
+.region h1,.region .region-title{text-align:center;font-size:17px;font-weight:800;color:var(--navy);margin-bottom:32px;letter-spacing:-.2px}
 .region-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;max-width:520px;margin:0 auto}
 .region-box{display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1/0.6;border-radius:10px;background:rgba(255,255,255,.55);border:1px solid var(--line);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 4px 10px rgba(60,50,30,.16),0 1px 2px rgba(60,50,30,.12);font-size:clamp(22px,calc(8vw - 4px),36px);font-weight:700;color:var(--ink);letter-spacing:-1px;transition:background .15s,transform .1s}
 .region-box small{font-size:12px;font-weight:700;color:#7a8592;letter-spacing:0;margin-top:4px}
 .region-box{cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}.region-box.tap,.step.tap,.point.tap,.region-bar.tap{animation:boxTap .6s cubic-bezier(.3,1.4,.5,1)}@keyframes boxTap{0%{transform:translateY(0) scale(1)}25%{transform:translateY(-16px) scale(1.09);background:#fff}50%{transform:translateY(5px) scale(.95)}75%{transform:translateY(-4px) scale(1.02)}100%{transform:translateY(0) scale(1)}}
-.region-bar{display:block;border-radius:10px;max-width:520px;margin:22px auto 0;box-shadow:0 6px 14px rgba(10,66,54,.28);-webkit-tap-highlight-color:transparent;background:var(--navy);color:#fff;text-align:center;font-size:clamp(18px,calc(6vw - 2px),28px);font-weight:700;padding:10px 0;letter-spacing:0;white-space:nowrap}
+.region-bar.tap,.notice.tap{animation:barTap .6s cubic-bezier(.3,1.4,.5,1)}@keyframes barTap{0%{transform:translateY(0) scale(1)}25%{transform:translateY(-16px) scale(1.05)}50%{transform:translateY(5px) scale(.97)}75%{transform:translateY(-4px) scale(1.01)}100%{transform:translateY(0) scale(1)}}
+.region-bar{display:block;cursor:pointer;user-select:none;border-radius:10px;max-width:520px;margin:36px auto 0;box-shadow:0 6px 14px rgba(10,66,54,.28);-webkit-tap-highlight-color:transparent;background:var(--navy);color:#fff;text-align:center;font-size:clamp(18px,calc(6vw - 2px),28px);font-weight:700;padding:10px 0;letter-spacing:0;white-space:nowrap}
 .region-note{text-align:center;font-size:14px;color:var(--text);margin-top:14px}
 section.block{padding:56px 0}
 section.alt{background:#fff}
@@ -73,7 +74,7 @@ section.alt .step{background:var(--bg)}
 .step .no{font-size:13px;font-weight:800;color:var(--teal-d);letter-spacing:1px}
 .step h3{font-size:19px;font-weight:900;margin:4px 0 6px}
 .step p{font-size:15.5px;color:var(--text)}
-.notice{margin-top:24px;background:#fff8e8;border:1.5px solid #c9a55a;border-radius:14px;padding:20px}
+.notice{cursor:pointer;-webkit-tap-highlight-color:transparent;margin-top:24px;background:#fff8e8;border:1.5px solid #c9a55a;border-radius:14px;padding:20px}
 .notice h3{font-size:17px;font-weight:800;color:#8a5a00;margin-bottom:8px}
 .notice li{font-size:15.5px;color:#5c4a24;margin-left:18px;line-height:1.75}
 .cta{background:var(--navy);color:#fff;text-align:center;padding:52px 20px}
@@ -200,7 +201,7 @@ footer.site .fnav a{color:#c9d3de}
       <div class="region-box" role="button" tabindex="0">안양</div>
       <div class="region-box" role="button" tabindex="0">기흥</div>
     </div>
-    <a class="region-bar" href="tel:01022658840">당일 무료 출장 야간 가능</a>
+    <div class="region-bar">당일 무료 출장 야간 가능</div>
   </div>
 </section><section class="block alt">
   <div class="wrap">
@@ -212,8 +213,8 @@ footer.site .fnav a{color:#c9d3de}
     </div>
   </div>
 </section><section class="inq-wrap"><div class="wrap">
-  <button type="button" class="inq-toggle" id="inqToggle" onclick="inqToggle()"><span>간편 문의 바로가기</span></button>
-  <div id="inqCollapse" style="display:none">
+  <button type="button" class="inq-toggle" id="inqToggle" onclick="inqToggle()"><span>간편 문의 바로가기 - 닫기</span></button>
+  <div id="inqCollapse" style="display:block">
     <div class="inq-card" id="inqCard">
       <h2>간편 문의하기</h2>
       <label class="inq-chk"><input type="checkbox" id="inqQuick" onchange="inqSyncQuick()">문의 양식 작성없이 바로 상담하기</label>
@@ -321,6 +322,6 @@ function inqReset(){
   if($i('inqMsg').value==='추가로 전달할 사항 없어요')$i('inqNoMsg').checked=true;
 })();
 </script>
-<script>document.querySelectorAll('.region-box,.step,.point,.region-bar').forEach(function(b){b.addEventListener('click',function(){b.classList.remove('tap');void b.offsetWidth;b.classList.add('tap')})});(function(){var h=document.querySelector('header.site'),lg=h.querySelector('.logo'),sz=function(){h.style.setProperty('--logoH',lg.offsetHeight+'px')};sz();window.addEventListener('resize',sz);var c=document.querySelector('.callbar'),tp=document.querySelector('.totop'),y=window.pageYOffset,t=false;window.addEventListener('scroll',function(){if(t)return;t=true;requestAnimationFrame(function(){var n=window.pageYOffset,d=n-y;var e=n+window.innerHeight>=document.documentElement.scrollHeight-40;if(n<80||d<-6||e){h.classList.remove('hide');c.classList.remove('hide')}else if(d>6){h.classList.add('hide');c.classList.add('hide')}tp.classList.toggle('show',n>400);tp.classList.toggle('low',c.classList.contains('hide'));if(Math.abs(d)>6)y=n;t=false})},{passive:true})})()</script>
+<script>document.querySelectorAll('.region-box,.step,.point,.region-bar,.notice').forEach(function(b){b.addEventListener('click',function(){b.classList.remove('tap');void b.offsetWidth;b.classList.add('tap')})});(function(){var h=document.querySelector('header.site'),lg=h.querySelector('.logo'),sz=function(){h.style.setProperty('--logoH',lg.offsetHeight+'px')};sz();window.addEventListener('resize',sz);var c=document.querySelector('.callbar'),tp=document.querySelector('.totop'),y=window.pageYOffset,t=false;window.addEventListener('scroll',function(){if(t)return;t=true;requestAnimationFrame(function(){var n=window.pageYOffset,d=n-y;var e=n+window.innerHeight>=document.documentElement.scrollHeight-40;if(n<80||d<-6||e){h.classList.remove('hide');c.classList.remove('hide')}else if(d>6){h.classList.add('hide');c.classList.add('hide')}tp.classList.toggle('show',n>400);tp.classList.toggle('low',c.classList.contains('hide'));if(Math.abs(d)>6)y=n;t=false})},{passive:true})})()</script>
 </body>
 </html>
