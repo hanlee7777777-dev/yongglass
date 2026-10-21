@@ -39,11 +39,11 @@ header.site.hide{transform:translateY(calc(-1 * var(--logoH,82px)))}
 .logo svg{width:52px;height:52px;flex:none}
 .logo{position:relative;overflow:hidden}
 .logo-run{position:absolute;top:50%;left:0;width:100%;height:25px;margin-top:-11px;pointer-events:none;z-index:2}
-.logo-run svg{position:absolute;left:30px;top:0;width:32.5px;height:25px;opacity:0;animation:carRun 7s linear infinite;filter:drop-shadow(0 2px 2px rgba(0,0,0,.25))}
+.logo-run svg{position:absolute;left:30px;top:0;width:32.5px;height:25px;opacity:0;animation:carRun 10s linear infinite;filter:drop-shadow(0 2px 2px rgba(0,0,0,.25))}
 @keyframes carRun{0%,15%{left:30px;opacity:0}15.5%{left:30px;opacity:1}74%{left:calc(100% + 40px);opacity:1}74.5%,100%{left:calc(100% + 40px);opacity:0}}
-.logo-car{animation:logoCar 7s linear infinite}
+.logo-car{animation:logoCar 10s linear infinite}
 @keyframes logoCar{0%,15%{opacity:1}15.5%,82%{opacity:0}90%,100%{opacity:1}}
-.logo-yong{opacity:0;transform-box:fill-box;transform-origin:center;animation:logoYong 7s ease-out infinite;font-family:inherit}
+.logo-yong{opacity:0;transform-box:fill-box;transform-origin:center;animation:logoYong 10s ease-out infinite;font-family:inherit}
 @keyframes logoYong{0%,20%{opacity:0;transform:scale(.5)}28%,76%{opacity:1;transform:scale(1)}82%,100%{opacity:0;transform:scale(.5)}}
 @media (prefers-reduced-motion:reduce){.logo-run{display:none}.logo-car,.logo-yong{animation:none}}
 .logo-txt{display:flex;flex-direction:column;line-height:1.15}
