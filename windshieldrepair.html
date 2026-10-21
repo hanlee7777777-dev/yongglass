@@ -125,7 +125,7 @@ footer.site .fnav a{color:#c9d3de}
 .cb-sms{background:#46a24a;color:#fff;box-shadow:0 4px 14px rgba(70,162,74,.35)}
 @media(max-width:380px){.cards{grid-template-columns:1fr}}
 
-.inq-wrap{padding:8px 0 48px}
+.inq-wrap{padding:8px 0 48px;scroll-margin-top:80px}
 .inq-toggle{width:100%;height:58px;border:2px solid #5fa882;border-radius:16px;background:#eaf5ef;color:#0e5a4a;font-size:19px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;font-family:inherit;margin-bottom:18px}
 .inq-card{background:#fff;border:1.5px solid #9ca5af;border-radius:18px;padding:24px 18px 22px;box-shadow:0 6px 18px rgba(30,42,38,.1)}
 .inq-card h2{margin:0 0 14px;font-size:20px;font-weight:800;color:var(--ink);text-align:center}
@@ -213,7 +213,7 @@ footer.site .fnav a{color:#c9d3de}
       <div class="step"><div class="no">STEP 03</div><h3>원하는 장소로 출장 시공</h3><p>집 앞, 회사 주차장 등 원하시는 곳에서 작업합니다.</p></div>
     </div>
   </div>
-</section><section class="inq-wrap"><div class="wrap">
+</section><section class="inq-wrap" id="inq"><div class="wrap">
   <button type="button" class="inq-toggle" id="inqToggle" onclick="inqToggle()"><span>간편 문의 바로가기 - 닫기</span></button>
   <div id="inqCollapse" style="display:block">
     <div class="inq-card" id="inqCard">
@@ -283,7 +283,7 @@ footer.site .fnav a{color:#c9d3de}
   </div>
 </footer>
 <button type="button" class="totop" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
-<div class="callbar"><a class="cb-tel" href="tel:01022658840">전화 상담</a><a class="cb-kakao" href="https://pf.kakao.com/" target="_blank" rel="noopener">카카오톡 상담</a><a class="cb-sms" href="sms:01022658840?body=%5B%EC%9A%A9%EA%B8%80%EB%9D%BC%EC%8A%A4%20%EB%AC%B8%EC%9D%98%5D%0A%EC%A7%80%EC%97%AD%3A%20%0A%EC%B0%A8%EC%A2%85%3A%20%0A%ED%8C%8C%EC%86%90%20%EB%B6%80%EC%9C%84%3A%20%0A%28%ED%8C%8C%EC%86%90%20%EC%82%AC%EC%A7%84%EC%9D%84%20%ED%95%A8%EA%BB%98%20%EB%B3%B4%EB%82%B4%EC%A3%BC%EC%84%B8%EC%9A%94%29">문자상담</a></div>
+<div class="callbar"><a class="cb-tel" href="tel:01022658840">전화 상담</a><a class="cb-kakao" href="#inq" onclick="return inqGo()">카카오톡 상담</a><a class="cb-sms" href="#inq" onclick="return inqGo()">문자상담</a></div>
 <script>
 var INQ_PHONE='01022658840',INQ_KAKAO='https://pf.kakao.com/',inqPending=null;
 function $i(id){return document.getElementById(id)}
@@ -292,6 +292,7 @@ function inqOpen(id){$i(id).style.display='flex'}
 function inqClose(id){$i(id).style.display='none'}
 function inqAlert(t){$i('inqAlertTxt').textContent=t;inqOpen('inqAlertOv')}
 function inqToggle(){var b=$i('inqCollapse'),o=b.style.display==='block';b.style.display=o?'none':'block';$i('inqToggle').firstChild.textContent=o?'간편 문의 바로가기':'간편 문의 바로가기 - 닫기'}
+function inqGo(){var b=$i('inqCollapse');if(b.style.display!=='block')inqToggle();$i('inq').scrollIntoView({behavior:'smooth',block:'start'});return false}
 function inqSyncQuick(){$i('inqFields').style.display=$i('inqQuick').checked?'none':'block'}
 function inqText(){
   if($i('inqQuick').checked)return '[용글라스 문의]\n문의 양식 작성 없이 빠른 상담을 요청합니다. 사진과 함께 연락 부탁드립니다.';
