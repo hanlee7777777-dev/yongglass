@@ -56,8 +56,8 @@ nav.main a{flex:none;font-size:15px;font-weight:700;color:#4b5563;padding:7px 9p
 nav.main a.active{background:var(--navy);color:#fff}
 .region{background:radial-gradient(ellipse at 15% 20%,rgba(255,255,255,.75),transparent 55%),radial-gradient(ellipse at 85% 75%,rgba(255,255,255,.6),transparent 50%),radial-gradient(ellipse at 60% 10%,rgba(0,0,0,.035),transparent 45%),var(--paper);padding:38px 0 44px;border-bottom:1px solid #e2dac8}
 .region h1,.region .region-title{text-align:center;font-size:17px;font-weight:800;color:var(--navy);margin-bottom:32px;letter-spacing:-.2px}
-.region-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;max-width:520px;margin:0 auto}
-.region-box{display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1/0.6;border-radius:10px;background:rgba(255,255,255,.55);border:1px solid var(--line);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 4px 10px rgba(60,50,30,.16),0 1px 2px rgba(60,50,30,.12);font-size:clamp(22px,calc(8vw - 4px),36px);font-weight:700;color:var(--ink);letter-spacing:-1px;transition:background .15s,transform .1s}
+.region-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;max-width:520px;margin:0 auto}
+.region-box{display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1/0.62;border-radius:10px;background:rgba(255,255,255,.55);border:1px solid var(--line);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 4px 10px rgba(60,50,30,.16),0 1px 2px rgba(60,50,30,.12);font-size:clamp(16px,4.6vw,24px);font-weight:700;color:var(--ink);letter-spacing:-.5px;white-space:nowrap;transition:background .15s,transform .1s}
 .region-box small{font-size:12px;font-weight:700;color:#7a8592;letter-spacing:0;margin-top:4px}
 .region-box{cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}.region-box.tap,.step.tap,.point.tap,.region-bar.tap{animation:boxTap .6s cubic-bezier(.3,1.4,.5,1)}@keyframes boxTap{0%{transform:translateY(0) scale(1)}25%{transform:translateY(-16px) scale(1.09);background:#fff}50%{transform:translateY(5px) scale(.95)}75%{transform:translateY(-4px) scale(1.02)}100%{transform:translateY(0) scale(1)}}
 .region-bar.tap,.notice.tap,.promise.tap{animation:barTap .6s cubic-bezier(.3,1.4,.5,1)}@keyframes barTap{0%{transform:translateY(0) scale(1)}25%{transform:translateY(-16px) scale(1.05)}50%{transform:translateY(5px) scale(.97)}75%{transform:translateY(-4px) scale(1.01)}100%{transform:translateY(0) scale(1)}}
@@ -222,9 +222,23 @@ footer.site .fnav a{color:#c9d3de}
       <div class="region-box" role="button" tabindex="0">용인</div>
       <div class="region-box" role="button" tabindex="0">수원</div>
       <div class="region-box" role="button" tabindex="0">성남</div>
+      <div class="region-box" role="button" tabindex="0">분당</div>
       <div class="region-box" role="button" tabindex="0">동탄</div>
+      <div class="region-box" role="button" tabindex="0">판교</div>
+      <div class="region-box" role="button" tabindex="0">인덕원</div>
       <div class="region-box" role="button" tabindex="0">안양</div>
+      <div class="region-box" role="button" tabindex="0">수지</div>
       <div class="region-box" role="button" tabindex="0">기흥</div>
+      <div class="region-box" role="button" tabindex="0">처인구</div>
+      <div class="region-box" role="button" tabindex="0">영통</div>
+      <div class="region-box" role="button" tabindex="0">팔달구</div>
+      <div class="region-box" role="button" tabindex="0">권선구</div>
+      <div class="region-box" role="button" tabindex="0">장안구</div>
+      <div class="region-box" role="button" tabindex="0">수정구</div>
+      <div class="region-box" role="button" tabindex="0">중원구</div>
+      <div class="region-box" role="button" tabindex="0">신현</div>
+      <div class="region-box" role="button" tabindex="0">오포</div>
+      <div class="region-box" role="button" tabindex="0">능평</div>
     </div>
     <a class="region-link" href="https://www.car700.co.kr" target="_blank" rel="noopener">서울 지역 담당자 홈페이지 바로가기</a>
     <div class="region-bar">당일 무료 출장 야간 가능</div>
