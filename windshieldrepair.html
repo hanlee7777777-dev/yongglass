@@ -149,7 +149,7 @@ footer.site .fnav a{color:#c9d3de}
 .cb-tel{background:#2f6be0;color:#fff;box-shadow:0 4px 14px rgba(47,107,224,.35)}
 .cb-kakao{background:#f9df4f;color:#1b1b1b;border:2px solid #d4b23a;box-shadow:0 4px 14px rgba(249,223,79,.45)}
 .cb-sms{background:#46a24a;color:#fff;box-shadow:0 4px 14px rgba(70,162,74,.35)}
-.faq-all-btn{display:block;width:100%;margin:18px 0 6px;padding:15px 10px;border-radius:12px;background:#fff;border:2px solid var(--navy);color:var(--navy);font:inherit;font-size:17px;font-weight:800;cursor:pointer;box-shadow:0 4px 12px rgba(14,90,74,.15)}
+.faq-all-btn{display:block;text-align:center;box-sizing:border-box;width:100%;margin:18px 0 6px;padding:15px 10px;border-radius:12px;background:#fff;border:2px solid var(--navy);color:var(--navy);font:inherit;font-size:17px;font-weight:800;cursor:pointer;box-shadow:0 4px 12px rgba(14,90,74,.15)}
 .faq-all-btn:active{transform:scale(.98)}
 .faqm{display:none;position:fixed;inset:0;z-index:20000;background:rgba(10,20,35,.55);align-items:flex-end;justify-content:center}
 .faqm.open{display:flex}
@@ -233,7 +233,7 @@ nav.main a:first-child{padding-left:8px;padding-right:8px}
     <details><summary>비 오는 날에도 작업할 수 있나요?</summary><p>지붕이 있는 주차장이라면 가능합니다. 야외라면 비가 그친 뒤 유리를 말린 상태에서 작업합니다.</p></details>
     <details><summary>작업 후 바로 운행해도 되나요?</summary><p>레진은 작업 중에 경화되므로 끝나면 바로 운행하실 수 있습니다.</p></details>
   </div>
-  <button type="button" class="faq-all-btn" onclick="faqOpen()">자주 묻는 질문 모음 보기</button><div class="related"><a href="/windshield-chip-repair">돌빵복원<span>작은 충격점 레진 복원</span></a><a href="/glass-crack-welding">유리용접<span>번진 크랙 접합 복원</span></a><a href="/repair-price">가격안내<span>비용이 정해지는 기준</span></a><a href="/repair-principle">복원원리<span>흔적이 남는 이유</span></a></div>
+  <a class="faq-all-btn" href="/faq">자주 묻는 질문 모음 보기</a><div class="related"><a href="/windshield-chip-repair">돌빵복원<span>작은 충격점 레진 복원</span></a><a href="/glass-crack-welding">유리용접<span>번진 크랙 접합 복원</span></a><a href="/repair-price">가격안내<span>비용이 정해지는 기준</span></a><a href="/repair-principle">복원원리<span>흔적이 남는 이유</span></a></div>
 </div></section>
 <section style="padding:8px 0 40px"><div class="wrap"><div class="promise" style="margin-top:0"><p>출장이라고 품질이<br>달라지지 않습니다.</p><p>오히려 고객님의<br><b>시간과 이동 부담</b>을 덜어드리는<br>가장 효율적인 방법입니다.</p></div></div></section><section class="region" id="service-area">
   <div class="wrap">
@@ -333,7 +333,6 @@ nav.main a:first-child{padding-left:8px;padding-right:8px}
     <button type="button" class="inq-btn inq-ok" onclick="inqClose('inqAlertOv')">확인</button>
   </div>
 </div>
-<div class="faqm" id="faqModal" role="dialog" aria-modal="true" aria-label="자주 묻는 질문 모음" onclick="if(event.target===this)faqClose()"><div class="faqm-box"><div class="faqm-top"><b>자주 묻는 질문 모음</b><button type="button" class="faqm-x" aria-label="닫기" onclick="faqClose()">✕</button></div><div class="faqm-body" id="faqBody"><p style="text-align:center;padding:30px 0;color:#666">불러오는 중…</p></div></div></div>
 <footer class="site">
   <div class="wrap">
     <b>용글라스</b>
@@ -386,7 +385,6 @@ function inqReset(){
   if($i('inqMsg').value==='추가로 전달할 사항 없어요')$i('inqNoMsg').checked=true;
 })();
 </script>
-<script>var faqLoaded=false;function faqOpen(){var m=document.getElementById('faqModal');m.classList.add('open');document.body.style.overflow='hidden';if(!faqLoaded){fetch('/faq.json').then(function(r){return r.json()}).then(function(d){document.getElementById('faqBody').innerHTML=d.html;faqLoaded=true}).catch(function(){document.getElementById('faqBody').innerHTML='<p style="text-align:center;padding:30px 0">잠시 후 다시 시도해 주세요.</p>'})}}function faqClose(){document.getElementById('faqModal').classList.remove('open');document.body.style.overflow=''}document.addEventListener('keydown',function(e){if(e.key==='Escape')faqClose()})</script>
 <script>document.querySelectorAll('.region-box,.step,.point,.region-bar,.notice,.promise').forEach(function(b){b.addEventListener('click',function(){b.classList.remove('tap');void b.offsetWidth;b.classList.add('tap')})});(function(){var h=document.querySelector('header.site'),lg=h.querySelector('.logo'),sz=function(){h.style.setProperty('--logoH',lg.offsetHeight+'px')};sz();window.addEventListener('resize',sz);var c=document.querySelector('.callbar'),tp=document.querySelector('.totop'),y=window.pageYOffset,t=false;window.addEventListener('scroll',function(){if(t)return;t=true;requestAnimationFrame(function(){var n=window.pageYOffset,d=n-y;var e=n+window.innerHeight>=document.documentElement.scrollHeight-40;if(n<80||d<-6||e){h.classList.remove('hide');c.classList.remove('hide')}else if(d>6){h.classList.add('hide');c.classList.add('hide')}tp.classList.toggle('show',n>400);tp.classList.toggle('low',c.classList.contains('hide'));if(Math.abs(d)>6)y=n;t=false})},{passive:true})})()</script>
 </body>
 </html>
