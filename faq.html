@@ -209,6 +209,7 @@ nav.main a:first-child{padding-left:8px;padding-right:8px}
   <p>복원 가능 여부, 비용, 시공 후 관리까지<br>많이 물어보시는 내용을 한곳에 모았습니다.</p>
 </div></section>
 <section class="article"><div class="wrap">
+  <button type="button" class="faq-all-btn faq-expand" id="faqExpand" onclick="faqToggleAll()" style="margin:0 0 22px">전체 펼쳐서 보기</button>
 <div class="faqm-group"><div class="faqm-head"><h3>유리복원</h3><a href="/windshieldrepair">페이지 보기 →</a></div><div class="faq">
     <details><summary>복원하면 흔적이 완전히 사라지나요?</summary><p>완전히 사라지지는 않습니다. 손상 부위가 투명해지면서 눈에 덜 띄게 되고, 더 번지지 않도록 막는 것이 목적입니다.</p></details>
     <details><summary>비 오는 날에도 작업할 수 있나요?</summary><p>지붕이 있는 주차장이라면 가능합니다. 야외라면 비가 그친 뒤 유리를 말린 상태에서 작업합니다.</p></details>
@@ -375,6 +376,7 @@ function inqReset(){
   if($i('inqMsg').value==='추가로 전달할 사항 없어요')$i('inqNoMsg').checked=true;
 })();
 </script>
+<script>function faqToggleAll(){var d=document.querySelectorAll('.article details'),o=[].some.call(d,function(x){return !x.open});d.forEach(function(x){x.open=o});document.getElementById('faqExpand').textContent=o?'전체 접기':'전체 펼쳐서 보기'}</script>
 <script>document.querySelectorAll('.region-box,.step,.point,.region-bar,.notice,.promise').forEach(function(b){b.addEventListener('click',function(){b.classList.remove('tap');void b.offsetWidth;b.classList.add('tap')})});(function(){var h=document.querySelector('header.site'),lg=h.querySelector('.logo'),sz=function(){h.style.setProperty('--logoH',lg.offsetHeight+'px')};sz();window.addEventListener('resize',sz);var c=document.querySelector('.callbar'),tp=document.querySelector('.totop'),y=window.pageYOffset,t=false;window.addEventListener('scroll',function(){if(t)return;t=true;requestAnimationFrame(function(){var n=window.pageYOffset,d=n-y;var e=n+window.innerHeight>=document.documentElement.scrollHeight-40;if(n<80||d<-6||e){h.classList.remove('hide');c.classList.remove('hide')}else if(d>6){h.classList.add('hide');c.classList.add('hide')}tp.classList.toggle('show',n>400);tp.classList.toggle('low',c.classList.contains('hide'));if(Math.abs(d)>6)y=n;t=false})},{passive:true})})()</script>
 </body>
 </html>

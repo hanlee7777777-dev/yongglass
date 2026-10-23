@@ -384,6 +384,7 @@ function inqReset(){
   if($i('inqMsg').value==='추가로 전달할 사항 없어요')$i('inqNoMsg').checked=true;
 })();
 </script>
+<script>function faqToggleAll(){var d=document.querySelectorAll('.article details'),o=[].some.call(d,function(x){return !x.open});d.forEach(function(x){x.open=o});document.getElementById('faqExpand').textContent=o?'전체 접기':'전체 펼쳐서 보기'}</script>
 <script>document.querySelectorAll('.region-box,.step,.point,.region-bar,.notice,.promise').forEach(function(b){b.addEventListener('click',function(){b.classList.remove('tap');void b.offsetWidth;b.classList.add('tap')})});(function(){var h=document.querySelector('header.site'),lg=h.querySelector('.logo'),sz=function(){h.style.setProperty('--logoH',lg.offsetHeight+'px')};sz();window.addEventListener('resize',sz);var c=document.querySelector('.callbar'),tp=document.querySelector('.totop'),y=window.pageYOffset,t=false;window.addEventListener('scroll',function(){if(t)return;t=true;requestAnimationFrame(function(){var n=window.pageYOffset,d=n-y;var e=n+window.innerHeight>=document.documentElement.scrollHeight-40;if(n<80||d<-6||e){h.classList.remove('hide');c.classList.remove('hide')}else if(d>6){h.classList.add('hide');c.classList.add('hide')}tp.classList.toggle('show',n>400);tp.classList.toggle('low',c.classList.contains('hide'));if(Math.abs(d)>6)y=n;t=false})},{passive:true})})()</script>
 </body>
 </html>
