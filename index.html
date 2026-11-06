@@ -60,6 +60,8 @@ nav.main a.active{background:var(--navy);color:#fff}
 .region{background:radial-gradient(ellipse at 15% 20%,rgba(255,255,255,.75),transparent 55%),radial-gradient(ellipse at 85% 75%,rgba(255,255,255,.6),transparent 50%),radial-gradient(ellipse at 60% 10%,rgba(0,0,0,.035),transparent 45%),var(--paper);padding:38px 0 44px;border-bottom:1px solid #e2dac8}
 .region h1,.region .region-title{text-align:center;font-size:17px;font-weight:800;color:var(--navy);margin-bottom:32px;letter-spacing:-.2px}
 .region-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;max-width:520px;margin:0 auto}
+.region-photo{margin:0 auto 24px;max-width:520px;border-radius:14px;overflow:hidden;box-shadow:0 6px 16px rgba(30,42,38,.18)}
+.region-photo img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;object-position:center 45%}
 .region-desc{text-align:center;font-size:16px;color:#222;line-height:1.7;margin:0 auto 24px;max-width:520px}
 .logo-txt h1{margin:0;font:inherit;display:block}
 .region-box{display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1/0.62;border-radius:10px;background:rgba(255,255,255,.55);border:1px solid var(--line);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 4px 10px rgba(60,50,30,.16),0 1px 2px rgba(60,50,30,.12);font-size:clamp(16px,4.6vw,24px);font-weight:700;color:var(--ink);letter-spacing:-.5px;white-space:nowrap;transition:background .15s,transform .1s}
@@ -211,7 +213,7 @@ nav.main a:first-child{padding-left:8px;padding-right:8px}
 </header>
 <section class="region" id="service-area">
   <div class="wrap">
-    <p class="region-desc">파손 사진을 보내주시면 수리 가능 여부와 비용을 먼저 알려드립니다.</p>
+    <figure class="region-photo"><img src="/car-wide.jpg" alt="용인 자동차유리복원 용글라스 당일 무료출장" width="1200" height="600"></figure>
     <div class="region-grid">
       <div class="region-box" role="button" tabindex="0">용인</div>
       <div class="region-box" role="button" tabindex="0">수원</div>
@@ -239,17 +241,10 @@ nav.main a:first-child{padding-left:8px;padding-right:8px}
     <a class="region-link region-blog" href="https://m.blog.naver.com/stara4" target="_blank" rel="noopener">네이버 블로그 바로가기</a>
   </div>
 </section>
-<figure style="margin:0"><img class="home-photo" src="/car-wide.jpg" alt="용인 자동차유리복원 용글라스 당일 무료출장" width="1200" height="600"></figure>
 <section class="block">
   <div class="wrap">
     <h2 class="h-big">작은 돌빵일 때<br>막아야 유리를 지킵니다</h2>
     <p class="lead">앞유리에 생긴 작은 충격점은 겨울철 온도 차나 주행 진동만으로도 금이 길게 번질 수 있습니다.<br><b>번지기 전에 레진으로 채워 막으면</b> 교체 없이 계속 탈 수 있는 경우가 많습니다.</p>
-    <div class="cards">
-      <a class="card" href="/windshieldrepair"><h3>유리복원</h3><p>교체하지 않고 손상 부위만 복원하는 기준</p><span class="go">자세히 →</span></a>
-      <a class="card" href="/windshield-chip-repair"><h3>돌빵복원</h3><p>동전 크기 이하 충격점의 레진 복원</p><span class="go">자세히 →</span></a>
-      <a class="card" href="/glass-crack-welding"><h3>유리용접</h3><p>이미 길게 번진 크랙의 접합 복원</p><span class="go">자세히 →</span></a>
-      <a class="card" href="/repair-price"><h3>가격안내</h3><p>복원 비용이 달라지는 기준</p><span class="go">자세히 →</span></a>
-    </div>
   </div>
 </section>
 <section class="block alt">
