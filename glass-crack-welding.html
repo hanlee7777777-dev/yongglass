@@ -201,6 +201,7 @@ nav.main a:first-child{padding-left:8px;padding-right:8px}
 .inq-pop h3{margin:0 0 16px;font-size:19px;font-weight:800;color:var(--ink)}
 .inq-guide{text-align:left;background:#eef7f1;border:1.5px solid #8fc9a3;border-radius:14px;padding:12px 16px;font-size:16.5px;color:#222;line-height:1.65}
 .inq-guide p+p{margin-top:10px}
+.inq-kakao-tip{display:none;text-align:left;margin-top:12px;background:#fff6cc;border:1.5px solid #e6c84a;border-radius:14px;padding:12px 16px;font-size:16px;color:#222;line-height:1.6}
 .inq-pop .inq-row{margin-top:20px}
 .inq-cancel{background:#f4f6f9;color:#5a6577;border:1px solid #dfe4ea}
 .inq-ok{background:#2f6be0;color:#fff;border:0}
@@ -317,6 +318,7 @@ nav.main a:first-child{padding-left:8px;padding-right:8px}
       <p>금이 길게 간 경우 <b>처음 돌에 맞은 지점이 잘 보이게</b> 찍어주시면 견적이 빨라집니다.</p>
       <p><b>가까이에서 초점을 맞춰</b> 찍어주세요. <b style="color:#2f6be0">카메라를 <span style="color:#e53935">"인물사진"</span> 모드로 두면 손상 부위가 잘 보여요.</b></p>
     </div>
+    <div class="inq-kakao-tip" id="inqKakaoTip"><b>카카오톡:</b> 채팅창이 열리면 입력창을 길게 눌러 <b>붙여넣기</b>를 해주세요. 작성한 문의 내용이 자동으로 입력됩니다.</div>
     <div class="inq-row">
       <button type="button" class="inq-btn inq-cancel" onclick="inqClose('inqGuideOv')">취소</button>
       <button type="button" class="inq-btn inq-ok" onclick="inqConfirm()">확인, 문의 보내기</button>
@@ -369,7 +371,7 @@ function inqText(){
 function inqCopy(t){try{if(navigator.clipboard&&navigator.clipboard.writeText)return navigator.clipboard.writeText(t).catch(function(){})}catch(e){}}
 function inqTry(act){
   if(!$i('inqQuick').checked&&(!inqVal('inqPart')||!inqVal('inqArea')||!inqVal('inqMsg'))){inqAlert('모든 항목을 입력해주세요.');return}
-  inqPending=act;inqOpen('inqGuideOv');
+  inqPending=act;$i('inqKakaoTip').style.display=act==='kakao'?'block':'none';inqOpen('inqGuideOv');
 }
 function inqConfirm(){
   var a=inqPending,t=inqText();inqPending=null;inqClose('inqGuideOv');
